@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Add Flight
+{% endblock %}
+
+{% block body %}
+<h2>Add Flight!</h2>
+<form action="{{ url_for('addflight') }}" method="post">
+    <h3>New Flight info:</h3>
+    <div class="form-group">
+        <input class="form-control" name="origin" placeholder="Flight Origin">
+        <input class="form-control" name="destination" placeholder="Flight Destination">
+        <input class="form-control" name="duration" placeholder="Duration">
+    </div>
+    <div class="form-group">
+        <button class="btn btm-primary">Add</button>
+    </div>
+</form>
+{% endblock %}

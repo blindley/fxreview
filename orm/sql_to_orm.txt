@@ -1,0 +1,22 @@
+SELECT * FROM flights;
+Flight.query.all()
+
+SELECT COUNT(*) FROM flights WHERE origin = 'Paris';
+Flight.query.filter_by(origin='Paris').count()
+
+SELECT * FROM flights WHERE id = 28;
+Flight.query.filter_by(id=28).all()
+
+SELECT * FROM flights ORDER by origin DESC;
+Flight.query.order_by(Flight.origin.desc()).all()
+
+SELECT * FROM flights WHERE origin IN ('Tokyo', 'Paris');
+Flight.query.filter(Flight.origin.in_(['Tokyo', 'Paris'])).all()
+
+SELECT * FROM flights WHERE origin = 'Paris' AND duration > 500;
+from sqlalchemy import and_
+Flight.query.filter(and_(Flight.origin=='Paris', Flight.duration > 500)).all()
+
+SELECT * FROM flights JOIN passengers ON flights.id = passengers.flight_id;
+db.session.query(Flight, Passenger).join(Passenger).all()
+
