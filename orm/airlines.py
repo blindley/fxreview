@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for
 from models import db, Passenger, Flight
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Iamnottheape@localhost:5432/airline'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://tylwqhnnfjvqkh:74f6ef069aa300ca77fd037fe327c8862e8fce251a31e6d49c9ed9dad5caa477@ec2-35-169-184-61.compute-1.amazonaws.com:5432/d6cves5kbuk51t'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
 
